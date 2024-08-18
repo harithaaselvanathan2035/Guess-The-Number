@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess the number</title>
+</head>
+<body>
+    <div class="hii">  
+    <center>
+
+        <h1>
+        GUESS THE NUMBER
+        </h1>
+        
+        <input id="guess">
+        <center>
+        <button onclick="check()">check</button></center>
+        <p id="result">You are wrong / Right </p>
+        <p id ="score">Score =10</p>
+
+        </center> 
+    </div> 
+</body>
+</html>
+
+
+
+
+<style>
+    
+    body{
+        border: 15px solid black;
+        padding: 0%;
+        margin-top: 150px;
+       margin-left: 300px;
+       margin-right: 300px;
+        background-color: bisque;
+        font-family: sans-serif;
+    }
+    p{
+        font-size: x-large;
+    }
+    
+    h1{
+        font-size: xx-large;
+        font-family: sans-serif;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .hii{
+        
+        position: relative;
+    }
+    .hii input{
+        background: rgba(255, 255, 255, 0.3);
+        border: 2px solid white;
+        border-radius: 50px;
+        padding: 1rem 2rem;
+        width: 400px;
+    }
+
+    .hii button{
+        font-size: medium;
+        font-family: sans-serif;
+        margin-top: 20px;
+        background-color: bisque;
+        border: 2px solid white;
+        border-radius: 50px;
+        width: 100px;
+        padding: 10px;
+   }
+   
+  .hii button:hover{
+    background-color: white;
+    
+  }
+    
+</style>
+
+<script>
+var guessnumber = document.getElementById("guess")
+var result = document.getElementById("result")
+var randomnumber = Math.floor(Math.random()*10)+1
+var score = document.getElementById("score")
+var total = 10
+function check()
+{
+    var enterednumber = guessnumber.value
+    if(randomnumber==enterednumber)
+    {
+       console.log("right")
+       result.textContent = "Right"
+       alert("You Won !!")
+    }
+    else{ 
+        console.log("Wrong")
+        total = total - 1
+        score.textContent="score ="+total
+        result.textContent = "Wrong"
+    }
+}
+</script>
